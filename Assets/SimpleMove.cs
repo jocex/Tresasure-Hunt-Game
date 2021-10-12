@@ -27,5 +27,18 @@ public class SimpleMove : MonoBehaviour
 
    void Update(){
        MoveObject();
+       if (transform.position.y>6){
+           transform.position = new Vector3(transform.position.x,6,0);
+       }
+       if (transform.position.y <-18){
+           transform.position = new Vector3(transform.position.x,-18,0);
+       }
+       if (transform.position.x>28){
+           transform.position = new Vector3(28,transform.position.y,0);
+       }
+        if (transform.position.x<-29){
+           transform.position = new Vector3(-29,transform.position.y,0);
+       }
+       }
    }
-}
+
