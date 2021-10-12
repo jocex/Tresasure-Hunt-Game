@@ -27,6 +27,7 @@ public class DockMove : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other){
         if(Input.GetKeyDown(KeyCode.G) && other.CompareTag("Player")){
             dock.OpenDock();
+            Score.AddToScore();
         }
     }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 }

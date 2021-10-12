@@ -26,6 +26,7 @@ public class DoorMove : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other){
         if(Input.GetKeyDown(KeyCode.G) && other.CompareTag("Player")){
             door.OpenDoor();
+            Score.AddToScore();
            
         }
         

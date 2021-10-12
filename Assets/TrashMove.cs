@@ -25,6 +25,7 @@ public class TrashMove : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other){
         if(Input.GetKeyDown(KeyCode.G) && other.CompareTag("Player")){
             trash.OpenDoor();
+            Score.AddToScore();
            
         }
         
