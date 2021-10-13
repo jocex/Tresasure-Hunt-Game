@@ -7,6 +7,7 @@ public class DoorMove : MonoBehaviour
     
     public BoxCollider2D bc; 
      public DoorMove door;
+     bool inDoor; 
 
      
      
@@ -23,14 +24,33 @@ public class DoorMove : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-    private void OnTriggerStay2D(Collider2D other){
-        if(Input.GetKeyDown(KeyCode.G) && other.CompareTag("Player")){
-            door.OpenDoor();
-            Score.AddToScore();
+    void Update(){
+        if(Input.GetKeyDown(KeyCode.G) && inDoor == true){
+            OpenDoor();
+             Score.AddToScore();
+
+        }
+
+    }
+
+    
+
+    private void OnTriggerEnter2D(Collider2D other){
+        if( other.CompareTag("Player")){
+            inDoor = true;
+            
+           
            
         }
-        
     }
+
+    private void OnTriggerExit2D(Collider2D other){
+        if( other.CompareTag("Player")){
+        inDoor = false;
+        }
+    }
+        
+    
 
 
     

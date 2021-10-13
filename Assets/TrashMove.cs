@@ -6,6 +6,7 @@ public class TrashMove : MonoBehaviour
 {
       public BoxCollider2D bct; 
      public TrashMove trash;
+     bool inTrash;
 
      
      
@@ -22,13 +23,29 @@ public class TrashMove : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-    private void OnTriggerStay2D(Collider2D other){
-        if(Input.GetKeyDown(KeyCode.G) && other.CompareTag("Player")){
+    void Update(){
+        if(Input.GetKeyDown(KeyCode.G) && inTrash == true){
             trash.OpenDoor();
-            Score.AddToScore();
-           
+             Score.AddToScore();
+
         }
-        
+
     }
 
+    
+
+    private void OnTriggerEnter2D(Collider2D other){
+        if( other.CompareTag("Player")){
+            inTrash = true;
+            
+           
+           
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other){
+        if( other.CompareTag("Player")){
+        inTrash = false;
+        }
+    }
 }

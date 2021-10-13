@@ -7,6 +7,7 @@ public class DockMove : MonoBehaviour
       public BoxCollider2D bco; 
       public GameObject fishcover;
       public DockMove dock;
+      bool inWater;
 
 
      
@@ -24,10 +25,29 @@ public class DockMove : MonoBehaviour
         fishcover.SetActive(true);
     }
 
-    private void OnTriggerStay2D(Collider2D other){
-        if(Input.GetKeyDown(KeyCode.G) && other.CompareTag("Player")){
-            dock.OpenDock();
-            Score.AddToScore();
+     void Update(){
+        if(Input.GetKeyDown(KeyCode.G) && inWater == true){
+            OpenDock();
+             Score.AddToScore();
+
         }
-    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+
+    }
+
+    
+
+    private void OnTriggerEnter2D(Collider2D other){
+        if( other.CompareTag("Player")){
+            inWater = true;
+            
+           
+           
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other){
+        if( other.CompareTag("Player")){
+        inWater = false;
+        }
+    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 }
