@@ -7,7 +7,7 @@ public class Score : MonoBehaviour
 {
     public static int score;
     public TMP_Text scoreText;
-    public GameObject EndScreen;
+    public GameObject Portal;
     public Score ScoreManager;
 
     public static void AddToScore(){
@@ -15,7 +15,7 @@ public class Score : MonoBehaviour
     }
 
     public void GoToEnd(){
-        EndScreen.SetActive(true);
+        Portal.SetActive(true);
     }
 
     private void Update(){

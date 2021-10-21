@@ -64,6 +64,18 @@ public class PlayerMove : MonoBehaviour
 
     void Update(){
         PlayerControls();
+        if (transform.position.y>100){
+           transform.position = new Vector3(transform.position.x,6,0);
+       }
+       if (transform.position.y <-4){
+           transform.position = new Vector3(transform.position.x,-4,0);
+       }
+       if (transform.position.x>11){
+           transform.position = new Vector3(11,transform.position.y,0);
+       }
+        if (transform.position.x<-12){
+           transform.position = new Vector3(-12,transform.position.y,0);
+       }
     }
 }
 
