@@ -4,29 +4,42 @@ using UnityEngine;
 
 public class SimpleMove : MonoBehaviour
 {
-   public float speed = 2.0f;
+   public float MoveSpeed = 4.0f;
+
+   public Animator animator;
+
+   void Awake(){
+        MoveSpeed = 0.0f;
+
+   }
 
    void Start(){
+      
        transform.position = new Vector3(0,0,0);
    }
 
    void MoveObject(){
+       
+       
        if (Input.GetKey(KeyCode.RightArrow)){
-           transform.Translate((Vector2.right *Time.deltaTime)*speed);
+         MoveSpeed = 4.0f;
+           transform.Translate((Vector2.right *Time.deltaTime)*MoveSpeed);
        }
        if (Input.GetKey(KeyCode.LeftArrow)){
-           transform.Translate((Vector2.left *Time.deltaTime)*speed);
+           transform.Translate((Vector2.left *Time.deltaTime)*MoveSpeed);
        }
        if (Input.GetKey(KeyCode.DownArrow)){
-           transform.Translate((Vector2.down *Time.deltaTime)*speed);
+           transform.Translate((Vector2.down *Time.deltaTime)*MoveSpeed);
        }
        if (Input.GetKey(KeyCode.UpArrow)){
-           transform.Translate((Vector2.up *Time.deltaTime)*speed);
+           transform.Translate((Vector2.up *Time.deltaTime)*MoveSpeed);
        }
    }
 
    void Update(){
        MoveObject();
+       
+       animator.SetFloat("Speed", Mathf.Abs(MoveSpeed));
        if (transform.position.y>6){
            transform.position = new Vector3(transform.position.x,6,0);
        }
