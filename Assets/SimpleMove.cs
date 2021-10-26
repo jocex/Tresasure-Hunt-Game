@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class SimpleMove : MonoBehaviour
 {
-   public float MoveSpeed = 4.0f;
-
+   public float Horizontal = 0.0f;
+   public float Vertical = 0.0f;
+   float runspeed = 4.0f;
    public Animator animator;
 
-   void Awake(){
-        MoveSpeed = 0.0f;
-
-   }
+ 
 
    void Start(){
       
@@ -22,24 +20,26 @@ public class SimpleMove : MonoBehaviour
        
        
        if (Input.GetKey(KeyCode.RightArrow)){
-         MoveSpeed = 4.0f;
-           transform.Translate((Vector2.right *Time.deltaTime)*MoveSpeed);
+           transform.Translate((Vector2.right *Time.deltaTime)*Horizontal);
        }
        if (Input.GetKey(KeyCode.LeftArrow)){
-           transform.Translate((Vector2.left *Time.deltaTime)*MoveSpeed);
+           transform.Translate((Vector2.left *Time.deltaTime)*Horizontal);
        }
        if (Input.GetKey(KeyCode.DownArrow)){
-           transform.Translate((Vector2.down *Time.deltaTime)*MoveSpeed);
+           transform.Translate((Vector2.down *Time.deltaTime)*Vertical);
        }
        if (Input.GetKey(KeyCode.UpArrow)){
-           transform.Translate((Vector2.up *Time.deltaTime)*MoveSpeed);
+           transform.Translate((Vector2.up *Time.deltaTime)*Vertical);
        }
    }
 
    void Update(){
        MoveObject();
-       
-       animator.SetFloat("Speed", Mathf.Abs(MoveSpeed));
+       Horizontal = Input.GetAxisRaw("Horizontal") * runspeed;
+       Vertical = Input.GetAxisRaw("Vertical") * runspeed;
+       animator.SetFloat("Horizontal", Mathf.Abs(runspeed));
+       animator.SetFloat("Vertical", Mathf.Abs(runspeed));
+
        if (transform.position.y>6){
            transform.position = new Vector3(transform.position.x,6,0);
        }
