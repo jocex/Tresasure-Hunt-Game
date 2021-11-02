@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public Animator animator;
+
+    Vector2 movement;
     
     public float moveSpeed = 7.0f;
     public float jumpPower = 7.0f;
@@ -76,6 +79,10 @@ public class PlayerMove : MonoBehaviour
         if (transform.position.x<-12){
            transform.position = new Vector3(-12,transform.position.y,0);
        }
+
+       animator.SetFloat("Horizontal", movement.x);
+       animator.SetFloat("Vertical", movement.y);
+       animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 }
 

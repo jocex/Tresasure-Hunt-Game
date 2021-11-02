@@ -91,7 +91,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Inserted Image
+  - name: Layer 3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -99,10 +99,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
-      width: 427
-      height: 329
-    spriteID: e34eeb6230595ce40bce0da209feef85
+      y: 422
+      width: 388
+      height: 333
+    spriteID: b6c919beeb515a24f8c3bdde0d6acb0b
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -112,7 +112,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -79, y: -234}
+    uvTransform: {x: -121, y: 415}
   - name: Layer 2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -121,10 +121,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 341
-      width: 313
+      y: 4
+      width: 456
       height: 410
-    spriteID: 94b2da4d63f43ee448aa80705cf4c106
+    spriteID: 3a6d96ce60af94c4cb5397337ca8347f
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -134,7 +134,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -131, y: 218}
+    uvTransform: {x: -134, y: -140}
   - name: Layer 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -142,11 +142,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 439
+      x: 468
       y: 4
       width: 361
-      height: 328
-    spriteID: 171f9a241e6623c4ea8e9608986299d0
+      height: 320
+    spriteID: 8a68293d402534d42a90bf5cc06ca4fa
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -156,7 +156,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 329, y: -19}
+    uvTransform: {x: 362, y: -276}
   characterData:
     bones: []
     parts: []
@@ -190,27 +190,27 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: Inserted Image
-    spriteName: Inserted Image
+  - name: Layer 3
+    spriteName: Layer 3
     isGroup: 0
     parentIndex: -1
-    spriteID: e34eeb6230595ce40bce0da209feef85
+    spriteID: b6c919beeb515a24f8c3bdde0d6acb0b
     layerID: 4
-    mosaicPosition: {x: 4, y: 4}
+    mosaicPosition: {x: 4, y: 422}
   - name: Layer 2
     spriteName: Layer 2
     isGroup: 0
     parentIndex: -1
-    spriteID: 94b2da4d63f43ee448aa80705cf4c106
+    spriteID: 3a6d96ce60af94c4cb5397337ca8347f
     layerID: 3
-    mosaicPosition: {x: 4, y: 341}
+    mosaicPosition: {x: 4, y: 4}
   - name: Layer 1
     spriteName: Layer 1
     isGroup: 0
     parentIndex: -1
-    spriteID: 171f9a241e6623c4ea8e9608986299d0
+    spriteID: 8a68293d402534d42a90bf5cc06ca4fa
     layerID: 2
-    mosaicPosition: {x: 439, y: 4}
+    mosaicPosition: {x: 468, y: 4}
   sharedRigPSDLayers: []
   generateGOHierarchy: 0
   textureAssetName: rising Texture
