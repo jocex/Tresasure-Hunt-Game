@@ -7,6 +7,7 @@ public class DoorMove : MonoBehaviour
     
     public BoxCollider2D bc; 
      public DoorMove door;
+     public AudioSource DoorCrash;
      bool inDoor; 
 
      
@@ -26,6 +27,10 @@ public class DoorMove : MonoBehaviour
 
     void Update(){
         if(Input.GetKeyDown(KeyCode.G) && inDoor == true){
+            if(!DoorCrash.isPlaying){
+                DoorCrash.Play();
+              
+            }
             OpenDoor();
              Score.AddToScore();
 
